@@ -184,8 +184,8 @@ function newNote(){
     if(treble){
         new_note = generateNote('A3','B5');
         current_note = new_note;
-        stave1 = new Stave(10, 0, 330);
-        stave2 = new Stave(10, 80, 330);
+        stave1 = new Stave(10, 0, 355);
+        stave2 = new Stave(10, 80, 355);
         stave1.addClef('treble');
         stave2.addClef('bass');
         // Create the notes
@@ -220,8 +220,8 @@ function newNote(){
     }else{
         new_note = generateNote('F2','E4');
         current_note = new_note;
-        stave1 = new Stave(10, 0, 330);
-        stave2 = new Stave(10, 80, 330);
+        stave1 = new Stave(10, 0, 355);
+        stave2 = new Stave(10, 80, 355);
         stave1.addClef('treble');
         stave2.addClef('bass');
         // Create the notes
