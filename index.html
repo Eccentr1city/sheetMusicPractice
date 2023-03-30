@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Sheet Music Practice App</title>
+            <style>
+                body {
+                background: rgb(80, 77, 81);
+                font-size: 110%;
+                padding: 20px;
+                }
+                main {
+                    margin: auto;
+                    position: relative;
+                    width: 400px;
+                    padding: 20px;
+                    background-color: white;
+                    text-align: center;
+                }
+                /* Set the height and width of the progress bar */
+                .progress {
+                height: 20px;
+                width: 350px;
+                margin: 40px auto;
+                border-radius: 10px;
+                background-color: #f0f0f0;
+                overflow: hidden;
+                display: none;
+                }
+
+                /* Set the color of the progress bar */
+                .progress .bar {
+                height: 100%;
+                background-color: #4caf50;
+                width: 0%;
+                /* transition: width 0.05s ease-in-out; */
+                }
+
+                /* Hide the checkbox */
+                .toggle input[type="checkbox"] {
+                display: none;
+                }
+
+                /* Style the switch */
+                .toggle .slider {
+                    position: relative;
+                    display: inline-block;
+                    left: 10px;
+                    width: 40px;
+                    height: 20px;
+                    background-color: #ccc;
+                    border-radius: 20px;
+                    transition: background-color 0.2s;
+                }
+
+                /* Style the switch knob */
+                .toggle .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 16px;
+                    width: 16px;
+                    left: 2px;
+                    bottom: 2px;
+                    background-color: white;
+                    border-radius: 50%;
+                    transition: transform 0.2s;
+                }
+
+                /* Style the switch label */
+                .toggle .label {
+                    float: left;
+                    margin-right: -30%;
+                    margin-left: 30%;
+                }
+
+                /* Style the switch when it is checked */
+                .toggle input[type="checkbox"]:checked + .slider {
+                background-color: #4caf50;
+                }
+
+                /* Style the switch knob when it is checked */
+                .toggle input[type="checkbox"]:checked + .slider:before {
+                transform: translateX(20px);
+                }
+
+                .information {
+                    display: none;
+                    text-align: left;
+                }
+
+                .controls {
+                    padding: 20px;
+                }
+
+            </style>
+        </head>
+        <body>
+            <main>
+                <h1>Sheet Music Practice</h1>
+                <div id="note-display"></div>
+                <div class="controls" id="buttons"><button id="skip-button" onclick="newNote()">Skip</button>
+                    <button id="play-button" onclick="playSound(notes[current_note])">Play Note</button></div>
+                
+                <div class="toggle">
+                    <input type="checkbox" id="mic-toggle" onchange="toggleMic()">
+                    <label for="mic-toggle" class="slider"></label>
+                    <span class="label" id="mic-label">Microphone Off</span>
+                </div>            
+                <div class="progress" id="correctness_bar">
+                    <div class="bar"></div>
+                </div>
+                <div class = "information" id = "mic-info">
+                    <p id="message"></p>
+                    <p id="frequency">Dominant Frequency: </p>
+                    <p id="note">Note: </p>
+                    <p id="amplitude">Amplitude: </p>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/vexflow@4.0.3/build/cjs/vexflow.js"></script>
+                <script src="app.js"></script>
+            </main>
+            
+        </body>
+    </html>
